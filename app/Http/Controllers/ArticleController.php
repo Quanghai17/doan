@@ -59,7 +59,7 @@ class ArticleController extends Controller
     public function show($slug)
     {
         $article = Article::where('slug',$slug)->with('blog')->first();
-        // dd($article);
+        //dd($article);
         $blog_id = $article->blog_id;
         $relative = Article::where('id',$blog_id)->limit(4)->get();
         // dd($relative);

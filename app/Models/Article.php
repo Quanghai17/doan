@@ -12,4 +12,8 @@ class Article extends Model
     public function blog(){
         return $this->belongsTo(Blog::class, 'blog_id', 'id');
     }
+
+    public function comments() {
+        return $this->belongsToMany(Comment::class, 'pivot_article_comment', 'article_id', 'comment_id');
+      }
 }
